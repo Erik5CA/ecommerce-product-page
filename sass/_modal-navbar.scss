@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "mixins" as m;
+@use "functions" as f;
 
 .modal-navbar {
   &__backgruound {
@@ -7,14 +8,14 @@
     @include m.modal-background(v.$Black-modal);
   }
   background-color: v.$White;
-  width: 250px;
+  width: f.rem(250);
   height: 100%;
-  padding: 20px 24px;
+  padding: f.rem(20) f.rem(24);
   &__items {
-    margin-top: 50px;
+    margin-top: f.rem(50);
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: f.rem(200);
     justify-content: space-between;
     list-style: none;
   }

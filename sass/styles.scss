@@ -3,12 +3,14 @@
 @use "header";
 @use "navbar";
 @use "modal-navbar";
+@use "breakpoints" as b;
+@use "functions" as f;
 
 .main-container {
-  width: 375px;
+  width: f.rem(375);
   border: 1px solid black;
   margin: auto;
-  @media (min-width: 1115px) {
-    width: 1115px;
+  @include b.breakpoint(xlarge) {
+    width: f.rem(1115);
   }
 }

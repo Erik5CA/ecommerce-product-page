@@ -1,8 +1,10 @@
 @use "variables" as v;
+@use "functions" as f;
+@use "breakpoints" as b;
 
 .navbar {
   display: none;
-  width: 400px;
+  width: f.rem(400);
   height: 100%;
   align-content: center;
   justify-content: center;
@@ -20,7 +22,7 @@
       flex-wrap: wrap;
       align-items: center;
       height: 100%;
-      padding-top: 4px;
+      padding-top: f.rem(4);
       border-bottom: 4px solid transparent;
 
       &:hover {
@@ -39,7 +41,7 @@
       color: v.$Very-dark-blue;
     }
   }
-  @media (min-width: 1115px) {
+  @include b.breakpoint(xlarge) {
     display: flex;
   }
 }

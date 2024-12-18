@@ -1,24 +1,26 @@
 @use "variables" as v;
+@use "functions" as f;
+@use "breakpoints" as b;
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
-  padding: 0 24px;
-  @media (min-width: 1115px) {
-    height: 112px;
+  height: f.rem(68);
+  padding: 0 f.rem(24);
+  @include b.breakpoint(xlarge) {
+    height: f.rem(112);
     border-bottom: 1px solid v.$Grayish-blue;
   }
 
   &__navigation {
-    width: 175px;
+    width: f.rem(175);
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @media (min-width: 1115px) {
-      width: 590px;
+    @include b.breakpoint(xlarge) {
+      width: f.rem(590);
     }
   }
 
@@ -26,26 +28,26 @@
     &:hover {
       cursor: pointer;
     }
-    @media (min-width: 1115px) {
+    @include b.breakpoint(xlarge) {
       display: none;
     }
   }
 
   &__cart-avatar {
-    width: 70px;
+    width: f.rem(70);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @media (min-width: 1115px) {
-      width: 125px;
+    @include b.breakpoint(xlarge) {
+      width: f.rem(125);
     }
   }
 
   &__cart {
     position: relative;
     &--notification {
-      width: 15px;
-      height: 12px;
+      width: f.rem(15);
+      height: f.rem(12);
       border-radius: 16px;
       position: absolute;
       background-color: v.$Orange;
@@ -62,13 +64,13 @@
   }
 
   &__avatar {
-    width: 24px;
+    width: f.rem(24);
     outline: 2px solid transparent;
     transition: outline-color 0.2s ease-in-out;
     border-radius: 50%;
     cursor: pointer;
-    @media (min-width: 1115px) {
-      width: 40px;
+    @include b.breakpoint(xlarge) {
+      width: f.rem(40);
     }
     &:hover {
       outline-color: v.$Orange;
