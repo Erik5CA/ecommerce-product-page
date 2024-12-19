@@ -1,0 +1,65 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "functions" as f;
+
+.gallery-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__background {
+    display: none;
+    @include m.modal-background(v.$Black-modal);
+    // display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: f.rem(85) 0;
+    width: 100%;
+  }
+  &__close {
+    width: f.rem(25);
+    height: f.rem(25);
+    margin-bottom: f.rem(22);
+    align-self: flex-end;
+  }
+  &__image-container {
+    height: f.rem(500);
+    width: f.rem(500);
+    background-image: url("../images/image-product-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 16px;
+    margin-bottom: f.rem(39);
+  }
+  &__previous {
+    @include m.image-btn(250px, -20px);
+  }
+  &__next {
+    @include m.image-btn(250px, 480px);
+  }
+  &__thumbnails {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__thumbnail {
+    width: f.rem(90);
+    height: f.rem(90);
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    &--active {
+      outline: 2px solid v.$Orange;
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: v.$White;
+        opacity: 0.9;
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}
