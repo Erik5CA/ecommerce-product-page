@@ -1,0 +1,51 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "functions" as f;
+.details {
+  padding: f.rem(24);
+  &__company {
+    color: v.$Orange;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: f.rem(12);
+    letter-spacing: 1px;
+  }
+  &__title {
+    font-size: 1.7rem;
+    margin-bottom: f.rem(16);
+  }
+  &__description {
+    font-size: 0.94rem;
+    color: v.$Dark-grayish-blue;
+    line-height: 24px;
+    margin-bottom: f.rem(24);
+  }
+  &__prices {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: f.rem(24);
+  }
+  &__now {
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: f.rem(18);
+  }
+  &__discount {
+    font-size: 0.5em;
+    background-color: v.$Pale-orange;
+    color: v.$Orange;
+    padding: 4px;
+    border-radius: 4px;
+  }
+  &__before {
+    font-weight: 700;
+    color: v.$Grayish-blue;
+    text-decoration: line-through;
+  }
+  &__button {
+    @include m.button;
+    box-shadow: 0px 13px 20px 5px hsl(26, 100%, 55%, 0.4);
+  }
+}
