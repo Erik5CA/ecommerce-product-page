@@ -1,8 +1,45 @@
+@use "variables" as v;
+@use "functions" as f;
+
 @mixin modal-background($color) {
   background-color: $color;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
+  z-index: 1;
+}
+
+@mixin image-btn($top, $left) {
+  background-color: v.$White;
+  width: f.rem(40);
+  height: f.rem(40);
+  padding: f.rem(12);
+  border-radius: 50%;
+  position: absolute;
+  top: $top;
+  left: $left;
+  cursor: pointer;
+}
+
+@mixin button {
+  width: 100%;
+  height: f.rem(57);
+  border-radius: 8px;
+  border: none;
+  background-color: v.$Orange;
+  color: v.$White;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: v.$font;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: f.rem(16);
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.7;
+  }
 }
