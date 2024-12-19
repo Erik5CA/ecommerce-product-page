@@ -1,15 +1,22 @@
 @use "initial";
 @use "variables";
-@use "header";
-@use "navbar";
-@use "modal-navbar";
 @use "breakpoints" as b;
 @use "functions" as f;
+@use "header";
+@use "content";
+@use "navbar";
+@use "modal-navbar";
+@use "gallery";
+@use "details";
+@use "input";
+@use "modal-cart";
+@use "gallery-modal";
 
 .main-container {
   width: f.rem(375);
   border: 1px solid black;
   margin: auto;
+  // position: relative;
   @include b.breakpoint(xlarge) {
     width: f.rem(1115);
   }
