@@ -1,0 +1,12 @@
+@use "breakpoints" as b;
+@use "functions" as f;
+.content {
+  display: flex;
+  flex-direction: column;
+
+  @include b.breakpoint(xlarge) {
+    flex-direction: row;
+    padding: f.rem(84) f.rem(42);
+    gap: f.rem(113);
+  }
+}
