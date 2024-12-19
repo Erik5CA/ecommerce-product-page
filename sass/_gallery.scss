@@ -1,0 +1,50 @@
+@use "functions" as f;
+@use "variables" as v;
+@use "mixins" as m;
+@use "breakpoints" as b;
+
+.gallery {
+  &__image-container {
+    height: f.rem(300);
+    width: 100%;
+    background-image: url("../images/image-product-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 16px;
+    margin-bottom: f.rem(30);
+    cursor: pointer;
+    position: relative;
+    @include b.breakpoint(xlarge) {
+      height: f.rem(400);
+      width: f.rem(400);
+    }
+  }
+  &__previous {
+    @include m.image-btn(130px, 15px);
+    @include b.breakpoint(xlarge) {
+      display: none;
+    }
+  }
+  &__next {
+    @include m.image-btn(130px, 320px);
+    @include b.breakpoint(xlarge) {
+      display: none;
+    }
+  }
+  &__thumbnails {
+    display: none;
+    @include b.breakpoint(xlarge) {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  &__thumbnail {
+    width: f.rem(80);
+    height: f.rem(80);
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+  }
+}
