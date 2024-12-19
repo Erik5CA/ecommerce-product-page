@@ -1,0 +1,27 @@
+@use "variables" as v;
+@use "functions" as f;
+
+.input {
+  height: f.rem(57);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: v.$Light-grayish-blue;
+  padding: 0 f.rem(18);
+  border-radius: 8px;
+  margin-bottom: f.rem(10);
+  &__number {
+    width: 100%;
+    border: none;
+    background-color: inherit;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: v.$font;
+    text-align: center;
+    outline: none;
+  }
+  &__minus,
+  &__plus {
+    cursor: pointer;
+  }
+}
